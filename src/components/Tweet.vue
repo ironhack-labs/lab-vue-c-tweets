@@ -1,46 +1,53 @@
 <template>
   <div class="tweet">
-    <img src="{{ image }}" class="profile" alt="profile" />
+    <ProfileImage :src="image" />
+    <!-- <img :src="image" class="profile" alt="profile" /> -->
 
     <div class="body">
       <div class="top">
-        <span class="user">
-          <span class="name">{{ name }}</span>
-          <span class="handle">@{{ handle }}</span>
-        </span>
+        <User :name="name" :handle="handle" />
 
-        <span class="timestamp">{{ timestamp }}</span>
+        <!-- <span class="user">
+          <span class="name">
+            {{ tweets }}</span>
+          <span class="handle">@hj</span>
+        </span> -->
+        <Timestamp :timestamp="timestamp" />
+        <!-- <span class="timestamp">jugj</span> -->
+
       </div>
-
-      <p class="message">
+      <Message :message="message" />
+      <!-- <p class="message">
         {{ message }}
-      </p>
+      </p> -->
 
-      <div class="actions">
-        <!-- Font Awesome icons -->
+      <Actions />
+      <!-- <div class="actions">
+        
         <i class="far fa-comment"></i>
         <i class="fas fa-retweet"></i>
         <i class="far fa-heart"></i>
         <i class="fas fa-share"></i>
-      </div>
+      </div> -->
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
 <script setup>
-import { defineProps } from 'vue';
+import User from './User.vue'
+import Timestamp from './Timestamp.vue'
+import ProfileImage from './ProfileImage.vue';
+import Message from './Message.vue';
+import Actions from './Actions.vue';
+import { ref } from 'vue';
 
+const props = defineProps(['name', 'image', 'handle', 'timestamp', 'message', 'user']);
 
-const props = defineProps({
-  tweet: Object,
-  name: String,
-  image: String,
-  handle: String,
-  timestamp: String,
-  message: String
-});
+const actions = ref(['comment, retweet, heart, share'])
+
 </script>
+
 <style scoped>
 a {
   color: #42b983;

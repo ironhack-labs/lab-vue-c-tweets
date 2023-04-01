@@ -1,7 +1,8 @@
 <template>
   <div class="app">
-    <Tweet :tweet="tweets[0]" :name="user.name" :image="user.image" :handle="user.handle" :timestamp="timestamp"
-      :message="message" />
+    <Tweet v-for="tweet in tweets" :key="tweet.id" :name="tweet.user.name" :handle="tweet.user.handle"
+      :message="tweet.message" :image="tweet.user.image" :timestamp="tweet.timestamp" />
+
   </div>
 </template>
 

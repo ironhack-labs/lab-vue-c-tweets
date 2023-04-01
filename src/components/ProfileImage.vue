@@ -1,9 +1,7 @@
 <template>
-    <img :src="user.image" class="profile" alt="profile" />
+    <img :src="image" class="profile" alt="profile" />
 </template>
 
 <script setup>
-const props = defineProps({
-    image: String
-})
+const props = defineProps(['image'])
 </script>

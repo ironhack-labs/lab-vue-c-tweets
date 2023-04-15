@@ -6,14 +6,18 @@
       />
   </template>
   
+  
   <script>
-  export default {
-      name: "ProfileImage",
-      components: {},
-      props: {
-          image: String,
-      },
+export default {
+  name: "ProfileImage",
+  components: {},
+  props: {
+    image: {
+      type: String,
+      required: true
+    }
   }
+}
   </script>
   
   <style>

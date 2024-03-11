@@ -1,24 +1,34 @@
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  tweet: {
+    type: Object,
+    required: true
+  }
+});
+
+const { timestamp, message, user } = props.tweet;
+const { name, image, handle } = user;
+
+</script>
+
 <template>
   <div class="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      class="profile"
-      alt="profile"
-    />
+    <img :src="image" class="profile" alt="profile" />
 
     <div class="body">
       <div class="top">
         <span class="user">
-          <span class="name">Ironhack</span>
-          <span class="handle">@ironhack</span>
+          <span class="name">{{ name }}</span>
+          <span class="handle">{{ handle }}</span>
         </span>
 
-        <span class="timestamp">Nov 30, 2020</span>
+        <span class="timestamp">{{ timestamp }}</span>
       </div>
 
       <p class="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
+        {{ message }}
       </p>
 
       <div class="actions">

@@ -1,9 +1,3 @@
-<template>
-  <div class="app">
-    <Tweet />
-  </div>
-</template>
-
 <script setup>
   import { ref } from 'vue';
   import Tweet from './components/Tweet.vue';
@@ -38,6 +32,12 @@
     }
 ]);
 </script>
+
+<template>
+  <div class="app">
+    <Tweet :user="tweets[0].user" :timeStamp="tweets[0].timestamp" :message="tweets[0].message" />
+  </div>
+</template>
 
 <style>
   body {

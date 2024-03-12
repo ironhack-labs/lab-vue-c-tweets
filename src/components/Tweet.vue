@@ -2,6 +2,7 @@
 import ProfileImage from './ProfileImage.vue';
 import User from './User.vue';
 import Timestamp from './Timestamp.vue';
+import Message from './Message.vue';
 
 const props = defineProps({
   tweet: {
@@ -25,9 +26,7 @@ const { image } = user;
         <Timestamp :time="timestamp" />
       </div>
 
-      <p class="message">
-        {{ message }}
-      </p>
+      <Message :message="message" />
 
       <div class="actions">
         <!-- Font Awesome icons -->

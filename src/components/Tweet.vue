@@ -1,17 +1,11 @@
 <script setup>
 
-defineProps({
-  tweet: {
-  user: {
-    name: String,
-    image: String,
-    handle: String,
-  },
-  timestamp: String,
-  message: String,
-}
-  }
-)
+const props = defineProps({
+    tweet: {
+      type: Object,
+      required: true
+    }
+  });
 
 </script>
 

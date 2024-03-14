@@ -1,10 +1,13 @@
 <script setup>
-  const props = defineProps ({
+  import ProfileImage from './ProfileImage.vue';
+  import User from './User.vue';
+
+  defineProps ({
     user: Object,
     message: String,
     timeStamp: String,
   })
-  import ProfileImage from './ProfileImage.vue';
+
 </script>
 
 <template>
@@ -14,10 +17,11 @@
 
     <div class="body">
       <div class="top">
-        <span class="user">
+        <!-- <span class="user">
           <span class="name">{{ user.name }}</span>
-          <span class="handle">@{{ user.name }}</span>
-        </span>
+          <span class="handle">@{{ user.handle }}</span>
+        </span> -->
+        <User :user="user" />
 
         <span class="timestamp">{{ timeStamp }}</span>
       </div>

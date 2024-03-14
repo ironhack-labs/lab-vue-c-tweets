@@ -1,19 +1,27 @@
+<script setup>
+import ProfileImage from '../components/ProfileImage.vue';
+defineProps({
+  tweet: Object
+})
+</script>
+
 <template>
   <div class="tweet">
-    <img :src="props.tweet.user.image" class="profile" alt="profile" />
+
+    <ProfileImage :image="tweet.user.image" />
 
     <div class="body">
       <div class="top">
         <span class="user">
-          <span class="name">{{ props.tweet.user.name }}</span>
-          <span class="handle">{{ props.tweet.user.handle }}</span>
+          <span class="name">{{ tweet.user.name }}</span>
+          <span class="handle">{{ tweet.user.handle }}</span>
         </span>
 
-        <span class="timestamp">{{ props.tweet.timestamp }}</span>
+        <span class="timestamp">{{ tweet.timestamp }}</span>
       </div>
 
       <p class="message">
-        {{ props.tweet.message }}
+        {{ tweet.message }}
       </p>
 
       <div class="actions">
@@ -28,12 +36,6 @@
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
-
-<script setup>
-const props = defineProps({
-  tweet: Object
-})
-</script>
 
 <style scoped>
 a {

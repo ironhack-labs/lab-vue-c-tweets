@@ -1,3 +1,11 @@
+<template>
+  <div class="app">
+    <Tweet :tweet="tweets[0]" />
+  </div>
+</template>
+
+<!-- ++++++++++++ -->
+
 <script setup>
 import { ref } from 'vue';
 import Tweet from './components/Tweet.vue';
@@ -33,13 +41,7 @@ const tweets = ref([
 ]);
 </script>
 
-<!-- ++++++++++++ -->
-<template>
-  <div class="app">
-    <Tweet :tweet="tweets[0]" />
-  </div>
-</template>
-<!-- ++++++++++++ -->
+
 <style>
 body {
   margin: 0;

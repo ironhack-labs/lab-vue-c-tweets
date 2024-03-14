@@ -1,10 +1,8 @@
 <template>
-  <div class="app">
-    <Tweet :tweet="tweets[0]" />
+  <div v-for="tweet in tweets" :key="tweet.user.name" class="app">
+    <Tweet :tweet="tweet" />
   </div>
 </template>
-
-<!-- ++++++++++++ -->
 
 <script setup>
 import { ref } from 'vue';

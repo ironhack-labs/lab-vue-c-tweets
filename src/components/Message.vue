@@ -4,11 +4,9 @@ const props = defineProps({
 })
 
 const message = props.message
-
 </script>
 
 <template>
-
     <p class="message">
         {{ message }}
     </p>

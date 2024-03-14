@@ -12,9 +12,6 @@ const props = defineProps({
 
 const { timestamp, message, user } = props.tweet;
 const { image } = user;
-
-
-
 </script>
 
 <template>
@@ -22,15 +19,12 @@ const { image } = user;
     <ProfileImage :image="image" />
     <div class="body">
       <div class="top">
-        <User :userData=user />
+        <User :user=user />
         <Timestamp :timestamp=timestamp />
       </div>
-
       <Message :message=message />
-
       <Actions />
     </div>
-
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>

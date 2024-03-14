@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps({
-    userData: Object
+    user: Object
 })
-const { name, handle } = props.userData;
+const { name, handle } = props.user;
 </script>
 
 <template>

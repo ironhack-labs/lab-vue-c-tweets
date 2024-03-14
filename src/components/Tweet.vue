@@ -1,10 +1,3 @@
-<script setup>
-const props = defineProps({
-  tweet: Object
-})
-console.log(props.tweet.user.name)
-</script>
-
 <template>
   <div class="tweet">
     <img :src="props.tweet.user.image" class="profile" alt="profile" />
@@ -35,6 +28,12 @@ console.log(props.tweet.user.name)
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  tweet: Object
+})
+</script>
 
 <style scoped>
 a {

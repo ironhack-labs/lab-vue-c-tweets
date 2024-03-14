@@ -9,7 +9,7 @@ defineProps({
     :src="image"
     class="profile"
     alt="profile"
-/>a
+/>
 </template>
 
 <style scoped>

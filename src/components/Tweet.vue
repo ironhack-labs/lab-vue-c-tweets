@@ -18,7 +18,7 @@
     <div class="body">
       <div class="top">
         <User :userData="tweet.user" />
-        <Timestamp :time="tweet.timeStamp" />
+        <Timestamp :time="tweet.timestamp" />
       </div>
 
       <Message :message="tweet.message"/>

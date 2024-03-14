@@ -1,6 +1,7 @@
 <script setup>
   import ProfileImage from './ProfileImage.vue';
   import User from './User.vue';
+  import Timestamp from './Timestamp.vue';
 
   defineProps ({
     user: Object,
@@ -23,7 +24,8 @@
         </span> -->
         <User :user="user" />
 
-        <span class="timestamp">{{ timeStamp }}</span>
+        <!-- <span class="timestamp">{{ timeStamp }}</span> -->
+        <Timestamp :timeStamp="timeStamp" />
       </div>
 
       <p class="message">

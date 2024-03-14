@@ -1,5 +1,7 @@
 <script setup>
-
+    defineProps ({
+        imageUrl: String,
+    })
 </script>
 
 <template>

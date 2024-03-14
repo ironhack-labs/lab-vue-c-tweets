@@ -1,11 +1,15 @@
 <script setup>
+
 import ProfileImage from '../components/ProfileImage.vue';
 import User from '../components/User.vue'
 import Timestamp from '../components/Timestamp.vue';
 import Message from '../components/Message.vue';
+import Actions from '../components/Actions.vue';
+
 defineProps({
   tweet: Object
 })
+
 </script>
 
 <template>
@@ -21,13 +25,7 @@ defineProps({
 
       <Message :message="tweet.message" />
 
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <Actions />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>

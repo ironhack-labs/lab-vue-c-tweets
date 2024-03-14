@@ -1,11 +1,11 @@
 <script setup>
     defineProps ({
-        imageUrl: String,
+        image: String,
     })
 </script>
 
 <template>
-    <img :src="imageUrl" class="profile" alt="profile"/>
+    <img :src="image" class="profile" alt="profile"/>
 </template>
 
 <style scoped>

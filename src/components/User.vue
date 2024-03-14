@@ -1,13 +1,13 @@
 <script setup>
     defineProps ({
-        user: Object,
+        userData: Object,
     })
 </script>
 
 <template>
     <span class="user">
-        <span class="name">{{ user.name }}</span>
-        <span class="handle">{{ user.handle }}</span>
+        <span class="name">{{ userData.name }}</span>
+        <span class="handle">{{ userData.handle }}</span>
     </span>
 </template>
 

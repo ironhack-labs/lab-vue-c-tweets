@@ -1,11 +1,11 @@
 <script setup>
     defineProps ({
-        timeStamp: String,
+        time: String,
     })
 </script>
 
 <template>
-  <span class="timestamp">{{ timeStamp }}</span>
+  <span class="timestamp">{{ time }}</span>
 </template>
 
 <style scoped>

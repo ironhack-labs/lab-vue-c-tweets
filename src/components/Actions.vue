@@ -1,4 +1,3 @@
-
 <template>
   <div class="actions">
     <!-- Font Awesome icons -->

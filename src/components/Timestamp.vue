@@ -1,5 +1,4 @@
 <script setup>
-
 defineProps({
   timestamp: {
     type: String,
@@ -9,5 +8,5 @@ defineProps({
 </script>
 
 <template>
-  <span class="timestamp">{{timestamp }}</span>
+  <span class="timestamp">{{ timestamp }}</span>
 </template>

@@ -20,7 +20,7 @@ defineProps({
     <div class="body">
       <div class="top">
         <span class="user">
-          <User :name="tweet.user.name" :handle="tweet.user.handle" />          
+          <User :name="tweet.user.name" :handle="tweet.user.handle" />
         </span>
 
         <Timestamp :timestamp="tweet.timestamp" />

@@ -1,5 +1,4 @@
 <script setup>
-
 defineProps({
   name: {
     type: String,
@@ -13,6 +12,6 @@ defineProps({
 </script>
 
 <template>
-  <span class="name">{{name }}</span>
-  <span class="handle">{{ handle}}</span>
+  <span class="name">{{ name }}</span>
+  <span class="handle">{{ handle }}</span>
 </template>

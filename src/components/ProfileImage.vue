@@ -1,12 +1,10 @@
 <script setup>
-
- defineProps({
+defineProps({
   image: {
     type: String,
     required: true,
   },
 });
-
 </script>
 
 <template>

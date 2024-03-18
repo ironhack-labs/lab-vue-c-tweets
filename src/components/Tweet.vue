@@ -1,5 +1,5 @@
 <template>
-  <div class="tweet">
+  <div v-if="tweet" class="tweet">
     <ProfileImage :image="tweet.user.image" />
 
     <div class="body">

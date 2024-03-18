@@ -13,7 +13,7 @@
           <span class="handle">@ironhack</span>
         </span>
 
-        <span class="timestamp">Nov 30, 2020</span>
+        <span class="timestamp">Nov 30, 2020</span> 
       </div>
 
       <p class="message">

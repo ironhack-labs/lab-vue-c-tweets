@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet v-for="(tweet, index) in tweets" :key="index" :tweetData="tweet" />
   </div>
 </template>
 
@@ -27,7 +27,7 @@
       timestamp: "2h ago",
       message: "sometimes. the human presses their noggin against mine. to figure out what i’m thinking. so i just think really hard. about how much i love them. and hope they figure it out",
     },
-    {
+    { 
       user: {
         name: "Thoughts of Dog®",
         image: "https://i.imgur.com/b0EdHVV.jpg",

@@ -1,41 +1,31 @@
 <script setup>
 
 import ProfileImage from '@/components/ProfileImage.vue';
+import User from '@/components/User.vue';
+import Message from '@/components/Message.vue';
+import Actions from '@/components/Actions.vue';
+import Timestamp from '@/components/Timestamp.vue';
 
 const props = defineProps({
-  user: {
+  tweet: {
     type: Object,
-    name: { type: String },
-    handle: { type: String },
-  },
-  timestamp: { type: String },
-  message: { type: String },
+    required: true
+  }
 });
+
 </script>
 
 <template>
   <div class="tweet">
-    <ProfileImage :image="props.user.image"/>
+    <ProfileImage :image="props.tweet.user.image"/>
 
     <div class="body">
       <div class="top">
-        <span class="user">
-          <span class="name">{{ props.user.name }}</span>
-          <span class="handle">@{{ props.user.handle }}</span>
-        </span>
-
-        <span class="timestamp">{{ props.timestamp }}</span>
+        <User :userData="props.tweet.user"/>
+<Timestamp :timestamp="props.tweet.timestamp"/>
       </div>
-
-      <p class="message">{{ props.message }}</p>
-
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <Message :message="props.tweet.message" />
+      <Actions />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>

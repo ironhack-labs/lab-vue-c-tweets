@@ -1,10 +1,11 @@
 <script setup>
 
+import ProfileImage from '@/components/ProfileImage.vue';
+
 const props = defineProps({
   user: {
     type: Object,
     name: { type: String },
-    image: { type: String },
     handle: { type: String },
   },
   timestamp: { type: String },
@@ -14,7 +15,7 @@ const props = defineProps({
 
 <template>
   <div class="tweet">
-    <img :src="props.user.image" class="profile" alt="profile" />
+    <ProfileImage :image="props.user.image"/>
 
     <div class="body">
       <div class="top">

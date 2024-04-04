@@ -1,8 +1,3 @@
-<template>
-  <div class="app">
-    <Tweet />
-  </div>
-</template>
 
 <script setup>
   import { ref } from 'vue';
@@ -38,6 +33,17 @@
     }
 ]);
 </script>
+
+<template>
+  <div class="app">
+    <Tweet 
+      v-for="tweet in tweets"
+      :user="tweet.user"
+      :timestamp="tweet.timestamp"
+      :message="tweet.message"
+    />
+  </div>
+</template>
 
 <style>
   body {

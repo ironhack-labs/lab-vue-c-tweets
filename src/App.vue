@@ -1,9 +1,3 @@
-<template>
-  <div class="app">
-    <Tweet />
-  </div>
-</template>
-
 <script setup>
   import { ref } from 'vue';
   import Tweet from './components/Tweet.vue';
@@ -38,6 +32,13 @@
     }
 ]);
 </script>
+
+<template>
+  <div class="app">
+    <!-- aquí recorro todos los tweets y sustituyo la data -->
+    <Tweet v-for="tweet in tweets" :tweet="tweet"/>
+  </div>
+</template>
 
 <style>
   body {

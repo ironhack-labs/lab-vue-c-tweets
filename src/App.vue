@@ -1,12 +1,19 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet :tweetcard = "tweets"><Actions/></Tweet>
+      <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </div>
 </template>
 
 <script setup>
   import { ref } from 'vue';
   import Tweet from './components/Tweet.vue';
+  import Actions from './components/Actions.vue';
 
   const tweets = ref([
     {

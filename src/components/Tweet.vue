@@ -1,39 +1,41 @@
 <template>
   <div class="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      class="profile"
-      alt="profile"
-    />
+    <!-- Profile Img-->
+    <ProfileImage :tweetChildImg="tweetImg" />
 
     <div class="body">
       <div class="top">
-        <span class="user">
-          <span class="name">Ironhack</span>
-          <span class="handle">@ironhack</span>
-        </span>
-
-        <span class="timestamp">Nov 30, 2020</span>
+        <!-- User Name-->
+        <User :tweetChildUser="tweetName" :tweetChildHandle="tweetHandle" />
+        <!-- Timestamp of Tweet-->
+        <Timestamp :tweetChildTimestamp="tweetTimestamp" />
       </div>
-
-      <p class="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
-      </p>
-
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <!-- Message of Tweet-->
+      <Message :tweetChildMessage="tweetMessage" />
+      <!-- Icons of Action-->
+      <Actions />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
 
+<script setup>
+import { ref, reactive, computed } from "vue";
+import ProfileImage from "./childComps/ProfileImage.vue";
+import User from "./childComps/User.vue";
+import Timestamp from "./childComps/Timestamp.vue";
+import Message from "./childComps/Message.vue";
+import Actions from "./childComps/Actions.vue";
+
+defineProps({
+  tweetName: String,
+  tweetMessage: String,
+  tweetImg: String,
+  tweetHandle: String,
+  tweetTimestamp: String,
+});
+</script>
 <style scoped>
 a {
   color: #42b983;

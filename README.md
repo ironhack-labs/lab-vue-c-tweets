@@ -343,4 +343,4 @@ Once finished, your app should be displaying the following content:
 
 <hr>
 
-Happy coding! :blue_heart:
+Happy coding! :blue_heart: :blue_heart: :blue_heart:

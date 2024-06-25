@@ -1,0 +1,19 @@
+<template>
+    <img :src="image" class="profile" alt="profile" />
+  </template>
+  
+  <script>
+  export default {
+    name: 'ProfileImage',
+    props: {
+      image: String
+    }
+  }
+  </script>
+  
+  <style scoped>
+  .profile {
+    color: #42b983;
+  }
+  </style>
+  

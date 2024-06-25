@@ -1,0 +1,21 @@
+<template>
+    <div class="actions">
+      <i class="far fa-comment"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="far fa-heart"></i>
+      <i class="fas fa-share"></i>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    name: 'Actions'
+  }
+  </script>
+  
+  <style scoped>
+  a {
+    color: #42b983;
+  }
+  </style>
+  

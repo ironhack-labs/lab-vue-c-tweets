@@ -1,5 +1,21 @@
+<script setup>
+import ProfileImage from './ChildComponents/ProfileImage.vue';
+import User from './ChildComponents/User.vue';
+import TimeStamp from './ChildComponents/TimeStamp.vue';
+import Message from './ChildComponents/Message.vue';
+import Actions from './ChildComponents/Actions.vue';
+
+defineProps({
+  tweet: {type: Object, required: true,}
+});
+</script>
+
 <template>
-  <div class="tweet">
+  <!-- src/App.vue -->
+<!-- ... -->
+
+
+  <!-- <div class="tweet">
     <img
       src="https://i.imgur.com/9yw1Fyw.jpg"
       class="profile"
@@ -19,23 +35,34 @@
       <p class="message">
         On December 7th, we will be hosting a #webinar that will introduce you
         to #SQL! Are you ready? 🚀
-      </p>
+      </p>  -->
 
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
+        <!-- <div class="actions">
+          Font Awesome icons 
+         <i class="far fa-comment"></i>
         <i class="fas fa-retweet"></i>
         <i class="far fa-heart"></i>
         <i class="fas fa-share"></i>
       </div>
-    </div>
+    </div> 
 
     <i class="fas fa-ellipsis-h"></i>
+  </div> -->
+
+  <div class="tweet">
+    <ProfileImage :image="tweet.user.image" />
+    <div class="body">
+      <div class="top">
+        <User :user="tweet.user" />
+        <TimeStamp :timeStamp="tweet.timestamp" />
+      </div>
+      <Message :message="tweet.message" />
+      <Actions />
+  </div>
+  <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
 
 <style scoped>
-a {
-  color: #42b983;
-}
+
 </style>

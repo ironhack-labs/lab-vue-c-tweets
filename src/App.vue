@@ -1,14 +1,10 @@
-<template>
-  <div class="app">
-    <Tweet />
-  </div>
-</template>
+
 
 <script setup>
-  import { ref } from 'vue';
+  import { ref, reactive } from 'vue';
   import Tweet from './components/Tweet.vue';
 
-  const tweets = ref([
+  const tweets = reactive([
     {
       user: {
         name: "Thoughts of Dog®",
@@ -38,6 +34,18 @@
     }
 ]);
 </script>
+
+<template>
+  <div class="app">
+    <Tweet :tweet="tweets[0]" />
+
+   <!-- <Tweet v-for="(tweet, index) in tweets" :tweet="tweet" :key="index" /> -->
+  
+  </div>
+
+</template>
+
+
 
 <style>
   body {

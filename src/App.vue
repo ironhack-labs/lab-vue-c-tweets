@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Tweet />
+    <Tweet v-for="(tweet, index) in tweets" :key="index" :tweet="tweet" />
   </div>
 </template>
 
@@ -35,7 +35,8 @@
       },
       timestamp: "3h ago",
       message: "here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
-    }
+    },
+    
 ]);
 </script>
 

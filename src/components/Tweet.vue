@@ -1,36 +1,35 @@
-<template>
-  <div class="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      class="profile"
-      alt="profile"
-    />
+<script setup>
+import { defineProps } from 'vue';
+import Actions from './Actions.vue';
+import Message from './Message.vue';
+import ProfileImage from './ProfileImage.vue';
+import Timestamp from './Timestamp.vue';
+import User from './User.vue';
 
+// Definimos los props que vamos a recibir.
+// Fíjate que aquí pone "movies", por lo tanto, cuando pasemos por prop en App.vue los datos deberemos referenciarlos como "movies".
+const props = defineProps({
+  tweetsP: {
+    type: Array,
+    required: true,
+  }
+})
+</script>
+
+<template>
+  <div class="tweet" v-for="(tweet, index) in tweetsP" :key="index">
+    <ProfileImage :image="tweet.user.image"></ProfileImage>
+    
     <div class="body">
       <div class="top">
-        <span class="user">
-          <span class="name">Ironhack</span>
-          <span class="handle">@ironhack</span>
-        </span>
-
-        <span class="timestamp">Nov 30, 2020</span>
+      <User :user="tweet.user"></User>
+      <Timestamp :timestamp="tweet.timestamp"></Timestamp>
       </div>
 
-      <p class="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
-      </p>
+      <Message :message ="tweet.message"></Message>
+     <Actions class="actions"></Actions>
 
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
     </div>
-
-    <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
 

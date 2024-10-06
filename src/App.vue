@@ -1,6 +1,9 @@
 <template>
   <div class="app">
-    <Tweet />
+      <!-- Pasar el primer tweet como prop -->
+    
+      <!--<Tweet v-for="(tweet, index) in tweets" :key="index" :tweet="tweet"/> -->   <!-- 2 -->
+      <Tweet v-for="(tweet, index) in tweets" :key="index" :tweet="tweet" />
   </div>
 </template>
 

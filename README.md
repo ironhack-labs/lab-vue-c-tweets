@@ -36,6 +36,9 @@ We will be cloning an existing piece of UI from a popular app, Twitter. Let's ge
 
 - Create a Pull Request so that your TAs can check your work.
 
+
+![instalacion](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/instalacion.jpg)
+
 ## Getting Started
    
 
@@ -64,6 +67,19 @@ Once you initially run the app, you should see the following:
 
 The `Tweet` component is at the moment rendering static content. We will change this in the next iteration. We'll update the `Tweet` component to display the content coming from the `props`.
 
+***Editar App.vue***
+```vue
+const tweet = {
+  user: {
+    name: 'Ironhack',
+    twitterHandle: '@ironhack',
+    profileImage: 'https://example.com/profile.jpg'
+  },
+  message: 'On December 7th, we will be hosting a #webinar...',
+  date: 'Nov 30, 2020'
+};
+```
+![iteracion 1](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/hello.jpg)
 
 ### Iteration 2 | Pass the Tweet as a Prop
 
@@ -90,6 +106,8 @@ Once done, your `Tweet` component should display the following content:
 
 ![Tweet component after passing the "tweets" prop](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-frontend-vue/lab-vue-tweets-2.png)
 
+
+![iteracion 2](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/instalacion02.jpg)
 
 ### Iteration 3 | Create the Components
 
@@ -150,6 +168,10 @@ You will do it in the next iterations, one step at a time. You will be replacing
 <br>
 </details>
 
+**creacion components**
+![iteracion 3](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/instalacion03.jpg)
+
+
 ### Iteration 4 | ProfileImage Component
 
 **Extract HTML**
@@ -164,7 +186,7 @@ Extract the existing `img` tag and render it through the `ProfileImage` componen
 
 Once done, import the `ProfileImage` component to `Tweet.js`.  After importing it, render the component inside of `Tweet` in the following way:
 
-```vue
+``` 
 <!-- ... -->
 <template>
   <div class="tweet">
@@ -176,6 +198,8 @@ Once done, import the `ProfileImage` component to `Tweet.js`.  After importing i
 
 `ProfileImage` receives a prop `image`. Set this value as the `src` of the `<img />` tag.
 
+**editar seleccion imagen**
+![iteracion 4](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/instalacion04.jpg)
 
 ### Iteration 5 | User Component
 
@@ -194,7 +218,7 @@ Extract the existing `span` tags displaying the user information and render them
 
 Import the `User` component to `Tweet.js`.  After importing it, render the component inside of `Tweet` in the following way:
 
-```vue
+```
 <!-- ... -->
 
 <template>
@@ -212,7 +236,8 @@ Import the `User` component to `Tweet.js`.  After importing it, render the compo
 
 We passed the object with the user information through the prop `userData`. Access and display the user's *name* and Twitter *handle*.
 
-
+**editas user components**
+![iteracion 5](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/instalacion05.jpg)
 
 ### Iteration 6 | Timestamp Component 
 
@@ -247,6 +272,9 @@ Import the `Timestamp` component to `Tweet.js`.  After importing it, render the 
 **Access the Props**
 
 `Timestamp` receives a prop `time`. Display this value as the content of the `span` tag.
+
+**editar Timestamp component**
+![iteracion 6](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/instalacion06.jpg) 
 
 
 ### Iteration 7 | Message Component
@@ -284,6 +312,8 @@ When done, import the `Message` component and render it in the `Tweet.js` in the
 
 `Message` receives a prop `message`. Display this value in the `p` tag.
 
+**editas message components**
+![iteracion 7](https://github.com/ciberzerone/lab-vue-c-tweets/blob/master/img/instalacion07.jpg)
 
 ### Iteration 8 | Actions Component
 

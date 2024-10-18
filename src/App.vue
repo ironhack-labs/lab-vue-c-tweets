@@ -1,7 +1,10 @@
 <template>
   <div class="app">
-    <Tweet />
-  </div>
+    <Tweet :tweet="tweets[0]" />
+    <Tweet :tweet="tweets[1]" />
+    <Tweet :tweet="tweets[2]" />
+    <!-- <Tweet v-for="tweet in tweets" :key="tweet.index" /> -->
+     </div>
 </template>
 
 <script setup>
@@ -10,6 +13,7 @@
 
   const tweets = ref([
     {
+      index: 1,
       user: {
         name: "Thoughts of Dog®",
         image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -19,6 +23,7 @@
       message: "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
     },
     {
+      index: 2,
       user: {
         name: "Thoughts of Dog®",
         image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -28,7 +33,9 @@
       message: "sometimes. the human presses their noggin against mine. to figure out what i’m thinking. so i just think really hard. about how much i love them. and hope they figure it out",
     },
     {
+      index: 3,
       user: {
+        
         name: "Thoughts of Dog®",
         image: "https://i.imgur.com/b0EdHVV.jpg",
         handle: "dog_feelings",

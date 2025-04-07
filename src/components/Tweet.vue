@@ -1,4 +1,5 @@
 <script setup>
+import Message from './Message.vue';
 import ProfileImage from './ProfileImage.vue';
 import Timestamp from './Timestamp.vue';
 import User from './User.vue';
@@ -18,9 +19,7 @@ import User from './User.vue';
         <Timestamp :time="tweet.timestamp" />
       </div>
 
-      <p class="message">
-        {{ tweet.message }}
-      </p>
+      <Message :message="tweet.message" />
 
       <div class="actions">
         <!-- Font Awesome icons -->

@@ -1,16 +1,14 @@
 <script setup>
-  defineProps({
+import ProfileImage from './ProfileImage.vue';
+
+  const props = defineProps({
     tweet: Object
   });
 </script>
 
 <template>
   <div class="tweet">
-    <img
-      :src= tweet.user.image
-      class="profile"
-      alt="profile"
-    />
+    <ProfileImage :image="tweet.user.image" />
 
     <div class="body">
       <div class="top">

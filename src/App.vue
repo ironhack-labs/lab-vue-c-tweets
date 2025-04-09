@@ -1,8 +1,3 @@
-<template>
-  <div class="app">
-    <Tweet />
-  </div>
-</template>
 
 <script setup>
   import { ref } from 'vue';
@@ -37,7 +32,21 @@
       message: "here is what. i plan to accomplish today: \n\n2. bark loudly. but at nothing \n7. lose my ball under the couch\n7b. politely ask the human. to get my ball\n3. immediately lose it again. under the same couch\n4. big nap. you have worked hard\n2. repeat",
     }
 ]);
+
+
+
 </script>
+
+<template>
+  <div class="app">
+    <!-- agregando el componente Tweet con un prop llamado tweet al que le pases el primer objeto del array tweets -->
+    <!-- Renderiza todos los tweets usando v-for -->
+    <Tweet v-for="(tweet, index) in tweets" :key="index" :tweet="tweet" />
+    <div class="brain-party" style="animation: brain-party 2s infinite;"></div>
+  </div>
+
+
+</template>
 
 <style>
   body {
@@ -166,5 +175,31 @@
     justify-content: space-between;
     color: #536471;
   }
+
+
+  .brain-party {
+  width: 100px;
+  height: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background: #42b983;
+  animation: brain-party 1.5s infinite ease-in-out;
+}
+
+@keyframes brain-party {
+  0% {
+    background: #42b983;
+    transform: scaleX(1);
+  }
+  50% {
+    background: #35495e;
+    transform: scaleX(1.2);
+  }
+  100% {
+    background: #42b983;
+    transform: scaleX(1);
+  }
+}
+
 
 </style>

@@ -1,33 +1,32 @@
-<template>
-  <div class="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      class="profile"
-      alt="profile"
-    />
+  <script setup>
+    import ProfileImage from '/src/components/ProfileImage.vue';
+    import User from '/src/components/User.vue';
+    import Message from '/src/components/Message.vue';
+    import Actions from '/src/components/Actions.vue';
+    import Timestamp from '/src/components/Timestamp.vue';
+
+
+  const props = defineProps({
+      tweet: Object,
+    
+    })
+
+  </script>
+
+  <template>
+    <div class="tweet">
+
+      <ProfileImage :image="tweet.user.image"/>
 
     <div class="body">
       <div class="top">
-        <span class="user">
-          <span class="name">Ironhack</span>
-          <span class="handle">@ironhack</span>
-        </span>
-
-        <span class="timestamp">Nov 30, 2020</span>
+        <User :name="tweet.user.name" :handle="tweet.user.handle"/>
+        <Timestamp :timestamp="tweet.timestamp"/>
       </div>
 
-      <p class="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
-      </p>
+      <Message :message="tweet.message"/>
 
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+      <Actions />
     </div>
 
     <i class="fas fa-ellipsis-h"></i>

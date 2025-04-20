@@ -1,3 +1,55 @@
+<script setup>
+
+import User from '../components/User.vue'
+import Actions from '../components/Actions.vue'
+import Message from '../components/Message.vue'
+import ProfileImage from '../components/ProfileImage.vue'
+import Timestamp from '../components/Timestamp.vue'
+
+const props = defineProps({
+  user: {
+  name: String,
+  img: String,
+  handle: String,
+  },  
+  timestamp: String, 
+  message: String,
+});
+
+</script>
+
+<template>
+  <div class="tweet">
+    <ProfileImage image="user.image" />
+
+    <div class="body">
+      <div class="top">
+        <User userData="user" />
+        <Timestamp time="timestamp" />
+      </div>
+
+      <Message message="message" />
+      <Actions />
+    </div>
+  <i class="fas fa-ellipsis-h"></i>
+
+</div>
+</template>
+
+
+<!--
+<script setup>
+  
+  const props = defineProps({
+    name: String,
+    img: String,
+    handle: String,
+    timestamp: String, 
+    message: String,
+  });
+
+</script>
+
 <template>
   <div class="tweet">
     <img
@@ -9,20 +61,19 @@
     <div class="body">
       <div class="top">
         <span class="user">
-          <span class="name">Ironhack</span>
-          <span class="handle">@ironhack</span>
+          <span class="tweetname">{{name}}</span>
+          <span class="handle">{{handle}}</span>
         </span>
 
-        <span class="timestamp">Nov 30, 2020</span>
+        <span class="timestamp">{{timestamp}}</span>
       </div>
 
       <p class="message">
-        On December 7th, we will be hosting a #webinar that will introduce you
-        to #SQL! Are you ready? 🚀
+        {{message}}
       </p>
 
       <div class="actions">
-        <!-- Font Awesome icons -->
+     // Font Awesome icons 
         <i class="far fa-comment"></i>
         <i class="fas fa-retweet"></i>
         <i class="far fa-heart"></i>
@@ -33,6 +84,8 @@
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
+
+-->
 
 <style scoped>
 a {

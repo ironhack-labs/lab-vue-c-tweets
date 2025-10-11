@@ -1,24 +1,16 @@
 <template>
   <div class="tweet">
-    <img
-      :src="tweet.user.image"
-      class="profile"
-      alt="profile"
-    />
+       <ProfileImage :image="tweet.user.image" />
+
 
     <div class="body">
       <div class="top">
-        <span class="user">
-          <span class="name">{{ tweet.user.name }}</span>
-          <span class="handle">@{{ tweet.user.handle }}</span>
-        </span>
+        <User :userData="tweet.user" />
+        <Timestamp :time="tweet.timestamp" />
 
-        <span class="timestamp">{{ tweet.timestamp }}</span>
       </div>
 
-      <p class="message">
-          {{ tweet.message }}
-      </p>
+        <Message :message="tweet.message" />
 
       <div class="actions">
         <!-- Font Awesome icons -->
@@ -34,6 +26,12 @@
 </template>
 
 <script setup>
+import ProfileImage from './ProfileImage.vue';
+import User from './User.vue';
+import Timestamp from './Timestamp.vue';
+import Message from './Message.vue';
+
+
 defineProps({
     tweet: Object
 })

@@ -1,0 +1,18 @@
+<script setup>
+const props = defineProps({
+    user: {
+        type: Object,
+        reqired: true, 
+    }
+})
+</script>
+
+<template>
+    <span class="user">
+          <span class="name">{{props.user.name }}</span>
+          <span class="handle">@{{ props.user.handle }}</span>
+        </span>
+</template>
+
+<style></style>
+

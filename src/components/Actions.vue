@@ -1,19 +1,21 @@
-<script setup>
-defineProps({
-    image: String
-})
-</script>
 
 <template>
-    <img :src="image" class="profile" alt="profile image" />
-
+  <div class="actions">
+        <i class="far fa-comment"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="far fa-heart"></i>
+        <i class="fas fa-share"></i>
+    </div>
 </template>
 
+<script setup>
+</script>
+
 <style scoped>
-.profile {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+  margin-top: 8px;
+  }
 </style>

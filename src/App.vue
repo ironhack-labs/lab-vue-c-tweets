@@ -1,6 +1,7 @@
 <template>
   <div class="app">
-    <Tweet />
+    <!-- <Tweet /> -->
+    <Tweet v-for="tweet in tweets" :tweet="tweet" :key="tweet.timestamp" />
   </div>
 </template>
 

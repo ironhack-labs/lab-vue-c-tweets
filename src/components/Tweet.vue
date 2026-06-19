@@ -1,5 +1,20 @@
 <template>
+  <header>
+    <h2>Hello!</h2>
+  </header>
   <div class="tweet">
+    <ProfileImage :image="tweet.user.image" />
+
+    <div>
+      <h3 class="name"><User :user="tweet.user.name"/></h3>
+      <p class="timestamp"><User :user="tweet.user.handle"/> . <Timestamp :time="tweet.timestamp"/></p>
+      
+      <Message :message="tweet.message"/>
+    </div>
+  </div>
+
+
+    <!-- <div class="tweet">
     <img
       src="https://i.imgur.com/9yw1Fyw.jpg"
       class="profile"
@@ -19,19 +34,11 @@
       <p class="message">
         On December 7th, we will be hosting a #webinar that will introduce you
         to #SQL! Are you ready? 🚀
-      </p>
+      </p> -->
+      
 
-      <div class="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
-    </div>
+      <Actions />
 
-    <i class="fas fa-ellipsis-h"></i>
-  </div>
 </template>
 
 <style scoped>
@@ -39,3 +46,17 @@ a {
   color: #42b983;
 }
 </style>
+
+<script setup>
+
+import Actions from "./Actions.vue";
+import Message from "./Message.vue";
+import ProfileImage from "./ProfileImage.vue"
+import Timestamp from "./Timestamp.vue";
+import User from "./User.vue";
+
+
+defineProps({
+  tweet: Object,
+})
+</script>
